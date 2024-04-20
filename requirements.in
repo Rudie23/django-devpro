@@ -1,2 +1,6 @@
 # requirements.in
 Django
+flake8
+python-decouple
+pytest-django
+pytest-cov
