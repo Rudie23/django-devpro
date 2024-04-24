@@ -1,9 +1,10 @@
 # requirements.in
 Django
 django-debug-toolbar
+dj-database-url
 flake8
 python-decouple
 pytest-django
 pytest-cov
-dj-database-url
 psycopg[binary]
+sentry-sdk[django]
