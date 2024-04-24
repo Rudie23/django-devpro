@@ -1,3 +1,2 @@
 # django-devpro
-Code developed in the section of Django from [Site Dev Pro](www.dev.pro.br)
-
+This Django code was inspired by [Site Dev Pro](https://dev.pro.br).
