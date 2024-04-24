@@ -1,5 +1,6 @@
 # requirements.in
 Django
+django-debug-toolbar
 flake8
 python-decouple
 pytest-django
