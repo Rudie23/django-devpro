@@ -1,0 +1,20 @@
+{% extends 'base/base.html' %}
+{% load static %}
+{% block title %}Dev Pro - Videos{% endblock title %}
+{% block description %}Page with free videos{% endblock description %}
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1 class="mt-4 mb-3">List of Videos</h1>
+                <ol>
+                    {% for video in videos %}
+                        <li><a href="{{ video.get_absolute_url }}">{{ video.title | default:"No Título" }}</a></li>
+                    {% empty %}
+                        <li>There was not found any video</li>
+                    {% endfor %}
+                </ol>
+            </div>
+        </div>
+    </div>
+{% endblock %}
