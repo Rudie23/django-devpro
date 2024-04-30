@@ -6,7 +6,7 @@ from website.django_assertions import assert_contains
 
 @pytest.fixture
 def response(client):
-    resp = client.get(reverse('base:index'))
+    resp = client.get(reverse('base:home'))
     return resp
 
 
@@ -19,4 +19,4 @@ def test_title(response):
 
 
 def test_home_link(response):
-    assert_contains(response, f'<a class="navbar-brand" href="{reverse('base:index')}">Dev Pro</a>')
+    assert_contains(response, f'<a class="navbar-brand" href="{reverse('base:home')}">Dev Pro</a>')
