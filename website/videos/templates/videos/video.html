@@ -1,0 +1,15 @@
+{% extends 'base/base.html' %}
+{% load static %}
+{% block title %}Python Pro - Aperitivo{% endblock title %}
+{% block description %}Página com vídeo gratuito de Python{% endblock description %}
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1 class="mt-4 mb-3">{{ video.titulo | default:"Faltando Título" }}</h1>
+                <iframe src="https://player.vimeo.com/video/695001664?h=25efc46c22" 
+                        width="720" height="564" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
+{% endblock %}
