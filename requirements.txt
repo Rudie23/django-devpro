@@ -17,6 +17,7 @@ django==5.0.4
     #   -r requirements.in
     #   dj-database-url
     #   django-debug-toolbar
+    #   model-bakery
     #   sentry-sdk
 django-debug-toolbar==4.3.0
     # via -r requirements.in
@@ -26,6 +27,8 @@ iniconfig==2.0.0
     # via pytest
 mccabe==0.7.0
     # via flake8
+model-bakery==1.18.0
+    # via -r requirements.in
 packaging==24.0
     # via pytest
 pluggy==1.5.0
@@ -38,7 +41,7 @@ pycodestyle==2.11.1
     # via flake8
 pyflakes==3.2.0
     # via flake8
-pytest==8.1.1
+pytest==8.2.0
     # via
     #   pytest-cov
     #   pytest-django
@@ -48,7 +51,7 @@ pytest-django==4.8.0
     # via -r requirements.in
 python-decouple==3.8
     # via -r requirements.in
-sentry-sdk[django]==1.45.0
+sentry-sdk[django]==2.0.1
     # via -r requirements.in
 sqlparse==0.5.0
     # via
