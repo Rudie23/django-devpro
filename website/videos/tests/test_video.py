@@ -15,7 +15,7 @@ def video(db):
 
 @pytest.fixture
 def resp(client: Client, video):
-    return client.get(reverse('videos:vimeo', args=(video.slug,)))
+    return client.get(reverse('videos:video', args=(video.slug,)))
 
 
 def test_status_code(resp):
@@ -26,5 +26,5 @@ def test_title_video(resp, video):
     assert_contains(resp, video.title)
 
 
-# def test_content(resp, video):
-#     assert_contains(resp, f'<iframe src=f"https://player.vimeo.com/video/{video.vimeo_id}"')
+def test_content(resp, video):
+    assert_contains(resp, f'<iframe src="https://player.vimeo.com/video/{video.vimeo_id}"')
