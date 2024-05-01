@@ -8,3 +8,4 @@ pytest-django
 pytest-cov
 psycopg[binary]
 sentry-sdk[django]
+model-bakery
