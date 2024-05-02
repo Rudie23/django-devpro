@@ -5,7 +5,7 @@ from website.django_assertions import assert_contains
 
 
 @pytest.fixture
-def response(client):
+def response(client, db):
     resp = client.get(reverse('base:home'))
     return resp
 
