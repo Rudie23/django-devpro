@@ -46,6 +46,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'website.base.apps.BaseConfig',
     'website.videos.apps.VideosConfig',
+    'website.modules.apps.ModulesConfig',
+    'ordered_model',
 ]
 
 MIDDLEWARE = [
@@ -79,6 +81,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'website.context_processors.list_modules',
             ],
         },
     },
