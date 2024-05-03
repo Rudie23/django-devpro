@@ -21,6 +21,8 @@ django==5.0.4
     #   sentry-sdk
 django-debug-toolbar==4.3.0
     # via -r requirements.in
+django-ordered-model==3.7.4
+    # via -r requirements.in
 flake8==7.0.0
     # via -r requirements.in
 iniconfig==2.0.0

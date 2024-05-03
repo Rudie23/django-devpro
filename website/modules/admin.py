@@ -1,11 +1,12 @@
 from django.contrib import admin
-from django.contrib.admin import ModelAdmin
+from ordered_model.admin import OrderedModelAdmin
+
 from website.modules.models import Module
 # Register your models here.
 
 
 @admin.register(Module)
-class ModuloAdmin(ModelAdmin):
-    list_display = ('title', 'public')
+class ModuloAdmin(OrderedModelAdmin):
+    list_display = ('title', 'public', 'move_up_down_links')
     prepopulated_fields = {'slug': ('title',)}
     search_fields = ('title',)

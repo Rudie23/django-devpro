@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'website.base.apps.BaseConfig',
     'website.videos.apps.VideosConfig',
     'website.modules.apps.ModulesConfig',
+    'ordered_model',
 ]
 
 MIDDLEWARE = [
