@@ -37,7 +37,7 @@
                     <ul class="dropdown-menu">
                         {% for module in MODULES %}
                         <li>
-                            <a class="dropdown-item" href="#">{{ module.title }}</a>
+                            <a class="dropdown-item" href="{{ module.get_absolute_url }}">{{ module.title }}</a>
                         </li>
                         
                         {% endfor %}

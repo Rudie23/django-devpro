@@ -3,5 +3,5 @@ from website.modules import views
 
 app_name = 'modules'
 urlpatterns = [
-    path('', views.index, name='index'),
+    path('<slug:slug>', views.detail_of_module, name='detail'),
 ]

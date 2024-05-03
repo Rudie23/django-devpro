@@ -1,0 +1,25 @@
+{% extends 'base/base.html' %}
+{% load static %}
+{% block title %}{{ module.title }}{% endblock title %}
+{% block description %}Page with details of module {{ module.title }}{% endblock description %}
+{% block content %}
+     <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1 class="mt-4 mb-3">{{ module.titulo}}</h1>
+                <dl>
+                    <dt>Public</dt>
+                    <dd>{{ module.public }}</dd>
+                    <dt>Description</dt>
+                    <dd>{{ module.description }}</dd>
+                </dl>
+{#                <h2>Aulas</h2>#}
+{#                <ol>#}
+{#                    {% for aula in aulas %}#}
+{#                        <li><a href="{{ aula.get_absolute_url }}">{{ aula.titulo }}</a></li>#}
+{#                    {% endfor %}#}
+{#                </ol>#}
+            </div>
+        </div>
+    </div>
+{% endblock %}
