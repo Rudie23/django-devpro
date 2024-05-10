@@ -1,0 +1,23 @@
+
+{% extends 'base/base.html' %}
+{% load static %}
+{% block title %}Lesson{% endblock title %}
+{% block description %}Free video{% endblock description %}
+{% block content %}
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="{% url 'base:home' %}">Home</a></li>
+            <li class="breadcrumb-item"><a href="{{lesson.module.get_absolute_url}}">{{lesson.module.title}}</a></li>
+            <li class="breadcrumb-item active" aria-current="page">{{lesson.title}}</li>
+        </ol>
+    </nav>
+    <div class="container">
+        <div class="row">
+            <h1 class="mt-4 mb-3">{{ lesson.title | default:"No Title" }}</h1>
+                <iframe src="https://player.vimeo.com/video/{{ lesson.vimeo_id }}"
+                        width="720" height="480"></iframe>
+        </div>
+            
+    </div>
+    
+{% endblock %}

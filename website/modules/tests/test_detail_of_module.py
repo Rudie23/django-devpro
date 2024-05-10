@@ -38,6 +38,6 @@ def test_titles_of_lessons(response, lessons):
         assert_contains(response, lesson.title)
 
 
-# def test_links_of_lessons(response, lessons):
-#     for lesson in lessons:
-#         assert_contains(response, lesson.get_absolute_url())
+def test_links_of_lessons(response, lessons):
+    for lesson in lessons:
+        assert_contains(response, lesson.get_absolute_url())
