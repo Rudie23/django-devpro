@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     'website.videos.apps.VideosConfig',
     'website.modules.apps.ModulesConfig',
     'ordered_model',
+    'django_extensions',
 ]
 
 MIDDLEWARE = [

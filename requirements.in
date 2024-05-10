@@ -3,7 +3,9 @@ Django
 django-debug-toolbar
 dj-database-url
 django-ordered-model
+django-extensions
 flake8
+ipython
 python-decouple
 pytest-django
 pytest-cov
