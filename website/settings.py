@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'website.base.apps.BaseConfig',
     'website.videos.apps.VideosConfig',
     'website.modules.apps.ModulesConfig',
+    'website.grades.apps.GradesConfig',
     'ordered_model',
     'django_extensions',
 ]

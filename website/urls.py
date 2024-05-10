@@ -25,6 +25,7 @@ urlpatterns = [
     path('', include('website.base.urls')),
     path('videos/', include('website.videos.urls')),
     path('modules/', include('website.modules.urls')),
+    path('grades/', include('website.grades.urls')),
 ]
 
 if settings.DEBUG:
