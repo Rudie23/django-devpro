@@ -35,6 +35,8 @@ ALLOWED_HOSTS = config('ALLOWED_HOSTS', cast=Csv())
 
 AUTH_USER_MODEL = 'base.DevUser'
 
+LOGIN_REDIRECT_URL = '/modules'
+
 # Application definition
 
 INSTALLED_APPS = [
@@ -47,6 +49,7 @@ INSTALLED_APPS = [
     'website.base.apps.BaseConfig',
     'website.videos.apps.VideosConfig',
     'website.modules.apps.ModulesConfig',
+    'website.grades.apps.GradesConfig',
     'ordered_model',
     'django_extensions',
 ]
