@@ -22,6 +22,7 @@ import debug_toolbar
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('accounts/', include('django.contrib.auth.urls')),
     path('', include('website.base.urls')),
     path('videos/', include('website.videos.urls')),
     path('modules/', include('website.modules.urls')),
