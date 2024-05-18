@@ -35,7 +35,9 @@ ALLOWED_HOSTS = config('ALLOWED_HOSTS', cast=Csv())
 
 AUTH_USER_MODEL = 'base.DevUser'
 
-LOGIN_REDIRECT_URL = '/modules'
+LOGIN_URL = '/accounts/login/'
+LOGIN_REDIRECT_URL = '/modules/'
+LOGOUT_REDIRECT_URL = '/'
 
 # Application definition
 

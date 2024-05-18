@@ -33,40 +33,40 @@ def test_login_redirect(resp_post):
     assert resp_post.status_code == 302
     assert resp_post.url == reverse('modules:index')
 
-#
-# @pytest.fixture
-# def resp_home(client, db):
-#     return client.get(reverse('base:home'))
-#
-#
-# def test_button_login_available(resp_home):
-#     assert_contains(resp_home, 'Sign in')
-#
-#
-# def test_link_of_login_available(resp_home):
-#     assert_contains(resp_home, reverse('login'))
-#
-#
-# @pytest.fixture
-# def resp_home_with_user_logged(client_com_usuario_logado, db):
-#     return client_com_usuario_logado.get(reverse('base:home'))
-#
-#
-# def test_button_login_unavailable(resp_home_with_user_logged):
-#     assert_not_contains(resp_home_with_user_logged, 'Sign in')
-#
-#
-# def test_link_of_login_unavailable(resp_home_with_user_logged):
-#     assert_not_contains(resp_home_with_user_logged, reverse('login'))
-#
-#
-# def test_button_exit_available(resp_home_with_user_logged):
-#     assert_contains(resp_home_with_user_logged, 'Exit')
-#
-#
-# def test_name_user_logged_available(resp_home_with_user_logged, usuario_logado):
-#     assert_contains(resp_home_with_user_logged, usuario_logado.first_name)
-#
-#
-# def test_link_of_logout_available(resp_home_with_user_logged):
-#     assert_contains(resp_home_with_user_logged, reverse('logout'))
+
+@pytest.fixture
+def resp_home(client, db):
+    return client.get(reverse('base:home'))
+
+
+def test_button_login_available(resp_home):
+    assert_contains(resp_home, 'Sign in')
+
+
+def test_link_of_login_available(resp_home):
+    assert_contains(resp_home, reverse('login'))
+
+
+@pytest.fixture
+def resp_home_with_user_logged(client_with_user_logged, db):
+    return client_with_user_logged.get(reverse('base:home'))
+
+
+def test_button_login_unavailable(resp_home_with_user_logged):
+    assert_not_contains(resp_home_with_user_logged, 'Sign in')
+
+
+def test_link_of_login_unavailable(resp_home_with_user_logged):
+    assert_not_contains(resp_home_with_user_logged, reverse('login'))
+
+
+def test_button_exit_available(resp_home_with_user_logged):
+    assert_contains(resp_home_with_user_logged, 'logout')
+
+
+def test_name_user_logged_available(resp_home_with_user_logged, user_logged):
+    assert_contains(resp_home_with_user_logged, user_logged.first_name)
+
+
+def test_link_of_logout_available(resp_home_with_user_logged):
+    assert_contains(resp_home_with_user_logged, reverse('logout'))

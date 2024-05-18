@@ -44,8 +44,16 @@
                     </ul>
                 </li>
             </ul>
+            {% if user.is_authenticated %}
+            <a class="btn btn-dark"> {{ user.first_name }}</a>
+                <form action="{% url 'logout' %}" method="post">
+                     {% csrf_token %}
+                    <button class="btn btn-danger" type="submit" >Logout</button>
+                </form>
+            {% else %}
             <a class="btn btn-dark" href="{% url 'login' %}" type="button">Sign in</a>
             <a class="btn btn-dark" href="#" type="button">Sign up</a>
+            {% endif %}
         </div>
     </div>
 </nav>
