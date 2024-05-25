@@ -7,7 +7,7 @@ from website.django_assertions import assert_contains, assert_not_contains
 
 @pytest.fixture
 def resp(client: Client, db):
-    return client.get(reverse('login'))
+    return client.get(reverse('login'), db)
 
 
 def test_login_form_page(resp):
@@ -16,7 +16,7 @@ def test_login_form_page(resp):
 
 @pytest.fixture
 def user(db, django_user_model):
-    user_model = baker.make(django_user_model)
+    user_model = baker.make(django_user_model, db)
     password = 'password'
     user_model.set_password(password)
     user_model.save()
@@ -36,7 +36,7 @@ def test_login_redirect(resp_post):
 
 @pytest.fixture
 def resp_home(client, db):
-    return client.get(reverse('base:home'))
+    return client.get(reverse('base:home'), db)
 
 
 def test_button_login_available(resp_home):
@@ -49,7 +49,7 @@ def test_link_of_login_available(resp_home):
 
 @pytest.fixture
 def resp_home_with_user_logged(client_with_user_logged, db):
-    return client_with_user_logged.get(reverse('base:home'))
+    return client_with_user_logged.get(reverse('base:home'), db)
 
 
 def test_button_login_unavailable(resp_home_with_user_logged):
