@@ -42,16 +42,16 @@ LOGOUT_REDIRECT_URL = '/'
 # Application definition
 
 INSTALLED_APPS = [
+    'website.base.apps.BaseConfig',
+    'website.videos.apps.VideosConfig',
+    'website.modules.apps.ModulesConfig',
+    'website.grades.apps.GradesConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'website.base.apps.BaseConfig',
-    'website.videos.apps.VideosConfig',
-    'website.modules.apps.ModulesConfig',
-    'website.grades.apps.GradesConfig',
     'ordered_model',
     'django_extensions',
 ]
@@ -94,6 +94,14 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'website.wsgi.application'
+
+# Set up of Email
+EMAIL_BACKEND = config('EMAIL_BACKEND')
+EMAIL_HOST = config('EMAIL_HOST')
+EMAIL_PORT = config('EMAIL_PORT')
+EMAIL_HOST_USER = config('EMAIL_HOST_USER')
+EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD')
+EMAIL_USE_TLS = config('EMAIL_USE_TLS')
 
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
