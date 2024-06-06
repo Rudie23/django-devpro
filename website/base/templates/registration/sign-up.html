@@ -1,0 +1,40 @@
+{% extends 'base/base.html' %}
+{% load static %}
+{% block title %}Sign Up{% endblock %}
+{% block description %}
+	sign up form page 
+{% endblock %}
+
+{% block content %}
+	<div class="container mt-3">
+        <form method="post">
+            {% csrf_token %}
+
+            <div id="div_id_email" class="mb-3"> <label
+                for="id_email" class="form-label requiredField">
+                Email<span class="asteriskField">*</span> </label> <input type="email" name="email" maxlength="320" class="emailinput form-control" required id="id_email">
+            </div> 
+            <div id="div_id_password1" class="mb-3"> <label
+                for="id_password1" class="form-label requiredField">
+                Password<span class="asteriskField">*</span> </label> <input type="password" name="password1" autocomplete="new-password" class="passwordinput form-control" required aria-describedby="id_password1_helptext" id="id_password1"> <div id="id_password1_helptext" class="form-text"><ul><li>Your password can’t be too similar to your other personal information.</li><li>Your password must contain at least 8 characters.</li><li>Your password can’t be a commonly used password.</li><li>Your password can’t be entirely numeric.</li></ul></div> 
+            </div> 
+            <div id="div_id_password2" class="mb-3"> <label
+                for="id_password2" class="form-label requiredField">
+                Password confirmation<span class="asteriskField">*</span> </label> <input type="password" name="password2" autocomplete="new-password" class="passwordinput form-control" required aria-describedby="id_password2_helptext" id="id_password2"> <div id="id_password2_helptext" class="form-text">Enter the same password as before, for verification.</div> 
+            </div> 
+            <div id="div_id_first_name" class="mb-3"> <label
+                for="id_first_name" class="form-label requiredField">
+                First name<span class="asteriskField">*</span> </label> <input type="text" name="first_name" class="textinput form-control" required id="id_first_name"> 
+            </div> 
+            <div id="div_id_last_name" class="mb-3"> <label
+                for="id_last_name" class="form-label requiredField">
+                Last name<span class="asteriskField">*</span> </label> <input type="text" name="last_name" class="textinput form-control" required id="id_last_name"> 
+            </div>
+
+    <p>Have an account? Login <a href="{% url 'login' %}">Here</a></p>
+    <button type="submit" class="btn btn-success">Register</button>
+        </form>
+        
+    </div>
+    
+{% endblock %}
